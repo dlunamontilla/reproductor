@@ -1,0 +1,7 @@
+# Directorios ignorados:
+stackoverflow
+
+# Extensiones:
+*.sql
+*.backup
+*.save

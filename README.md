@@ -6,7 +6,7 @@ La función `teclado()` permite ejecutar acciones con teclas específicas:
 
 ```js
 
-// Ejemplo de su uso:
+// Ejemplo de uso:
 if ( typeof soltar !== "undefined" )
   teclado( keyDown.f1, e => {
     e.preventDefault();
