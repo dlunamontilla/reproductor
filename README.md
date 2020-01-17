@@ -14,3 +14,5 @@ if ( typeof soltar !== "undefined" )
     console.log( "e =>", e );
   }, soltar);
 ```
+
+Donde `soltar` es el elemento HTML con `id=soltar`.
