@@ -1,0 +1,88 @@
+// Clases CSS provisionales:
+.ubicacion {
+  display: flex;
+  flex-direction: rows;
+  flex-wrap: wrap;
+  min-height: 100px;
+  align-items: center;
+  padding: 0 10px;
+
+  border: 1px solid rgba($color-base, 0.2);
+  background-color: lighten($color-base, 55);
+  color: $color-base;
+
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  font: {
+    variant: small-caps;
+    size: 2rem;
+  }
+
+  button {
+    display: block;
+    position: relative;
+    min-height: 40px;
+    color: white;
+    background-color: $color-base;
+    border: 0;
+    outline: medium none;
+    margin-left: 10px;
+    border-radius: 4px;
+  }
+}
+
+
+// SOLTAR AQUÍ:
+.soltar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  margin: 20px auto;
+  border-width: 2px;
+  border-style: dashed;
+
+  min-height: 200px;
+
+  padding: 10px;
+  max-width: 400px;
+  width: calc(100% - 20px);
+
+  transition: 300ms ease;
+  background-color: rgba($color-base, 0.05);
+  color: $color-base;
+  
+  font: {
+    size: 1.5rem;
+    variant: small-caps;
+  }
+
+  &:hover {
+    background-color: lighten($color-base, 50);
+  }
+
+  &--verde {
+    border-color: #008000;
+    box-shadow: 0 0 10px 2px rgba(#008000, 0.2);
+  }
+
+  a {
+    width: 100%;
+  }
+}
+
+// Enlace:
+.l {
+  &--enlace {
+    display: block;
+    max-width: 300px;
+    width: calc(100% - 20px); 
+    text-decoration: none;
+    border: 1px solid;
+    padding: 10px;
+    margin-bottom: 5px;
+
+  }
+}
