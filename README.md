@@ -3,7 +3,8 @@
 ## Evento para teclado:
 
 La función `teclado()` permite ejecutar acciones con teclas específicas:
-``` lang-js
+
+```js
 
 // Ejemplo de su uso:
 if ( typeof soltar !== "undefined" )
