@@ -16,3 +16,7 @@ if ( typeof soltar !== "undefined" )
 ```
 
 Donde `soltar` es el elemento HTML con `id=soltar`.
+
+<!-- Documentar código JavaScript:
+https://www.aprenderaprogramar.com/index.php?option=com_content&view=article&id=881:guia-de-estilo-javascript-comentarios-proyectos-jsdoc-param-return-extends-ejemplos-cu01192e&catid=78&Itemid=206
+ -->

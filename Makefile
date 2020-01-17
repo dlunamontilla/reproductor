@@ -15,3 +15,6 @@ main:
 
 servidor:
 	${code} && ${sass} ${parametros} ${rutas} &
+
+terminar:
+	sudo killall -9 ${code} ${sass}
