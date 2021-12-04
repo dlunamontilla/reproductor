@@ -11,15 +11,17 @@
 <body>
     <main id="app">
         <header class="header">
-            <div class="logo">
-                <img class="logo__img" src="Logo" alt="Logotipo">
-                <h1 class="logo__title"></h1>
-            </div>
-
-            <div class="search" id="search">
-                <input type="search" name="s" id="s" class="search__input" />
-                <button id="btn-search" arial-label="Buscar" data-svg="src/images/icons/search.xml" class="search__button"></button>
-            </div>
+            <nav class="navigation">
+                <div class="logo">
+                    <img class="logo__img" src="Logo" alt="Logotipo">
+                    <h1 class="logo__title">Escuchar música</h1>
+                </div>
+    
+                <div class="search" id="search">
+                    <input type="search" name="s" id="s" class="search__input" placeholder="Buscar música" />
+                    <button id="btn-search" arial-label="Buscar" data-svg="src/images/icons/search.xml" class="search__button"></button>
+                </div>
+            </nav>
         </header>
 
         <section class="container"></section>
@@ -41,6 +43,6 @@
         </div>
     </main>
 
-    <script src="build/js/main.js" type="module"></script>
+    <script src="src/js/main.js" type="module"></script>
 </body>
 </html>

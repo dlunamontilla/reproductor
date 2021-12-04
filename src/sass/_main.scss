@@ -30,6 +30,29 @@ main {
         width: 100%;
     }
 }
+
+.header {
+    h1, h2, h3, h4, h5, h6 {
+        margin: 0;
+    }
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 60px;
+    padding: 0 10px;
+}
+
+.logo {
+    gap: 10px;
+
+    &__title {
+        font-size: 1.1rem;
+    }
+}
+
 .player {
     --progress: 20%;
 
@@ -39,10 +62,8 @@ main {
     background-color: rgba(black, 0.7);
     min-height: 100px;
 
-    display: flex;
     justify-content: space-between;
-    align-items: center;
-
+    
     &::before {
         height: 4px;
         border-radius: 0 2px 2px 0;
@@ -60,8 +81,14 @@ main {
         z-index: 1;
     }
 
+    &, &__button {
+        display: flex;
+        align-items: center;
+    }
+
     &__button {
         --size: 35px;
+        gap: 10px;
 
         &__item {
 
