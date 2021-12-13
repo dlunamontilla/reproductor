@@ -45,7 +45,7 @@ class DLMusic {
      * Al ejecutar esta función se listarán un array de archivos
      * señalando la ruta relativa de los archivos de música.
      */
-    public function init() {
+    public function init() : void {
         $path = $this->processPATH($this->base_dir) . $this->path;
         $filter = "/(.mp3|.ogg)+$/";
 
@@ -71,13 +71,9 @@ class DLMusic {
         closedir($dir);
 
         header("content-type: application/json; charset=utf-8");
-        return $files;
+        echo json_encode($files);
     }
 }
 
 $music = new DLMusic;
-
-// header("content-type: application/json; charset=utf-8");
-// print_r($music->init());
-echo json_encode($music->init());
-// $music->init();
+$music->init();
