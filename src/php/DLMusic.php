@@ -38,7 +38,7 @@ class DLMusic {
         string $path = "multimedia/music"
     ) {
         $this->base_dir = (string) __DIR__ . "$base_dir";
-        $this->path = (string) $path;
+        $this->path = (string) $path . "/";
     }
 
     /**
@@ -47,6 +47,7 @@ class DLMusic {
      */
     public function init() {
         $path = $this->processPATH($this->base_dir) . $this->path;
+        $filter = "/(.mp3|.ogg)+$/";
 
         if (!is_dir($path)) {
             is_writable(dirname($this->path))
@@ -61,7 +62,10 @@ class DLMusic {
         while ($f = readdir($dir)) {
             $excluir = "/[^.]/";
             if (!preg_match($excluir, $f) || is_dir($path . $f)) continue;
-            array_push($files, $this->path . $f);
+
+            if (preg_match($filter, $f)) {
+                array_push($files, $this->path . $f);
+            }
         }
 
         closedir($dir);
