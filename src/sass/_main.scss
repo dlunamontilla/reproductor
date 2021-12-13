@@ -141,6 +141,7 @@ main {
             background-color: rgba(white, 0.7);
             outline: medium none;
             transition: 300ms ease;
+            position: relative;
 
             &:hover {
                 background-color: rgba(white, 0.9);
@@ -155,6 +156,33 @@ main {
                 width: calc(var(--size) * 1.8);
                 height: calc(var(--size) * 1.8);
                 border-radius: 50%;
+
+                --player: polygon(0 0, 100% 50%, 0 100%);
+                --size-icon: 30px;
+
+                &::before,
+                &::after {
+                    content: "";
+                    display: flex;
+                    position: absolute;
+                    margin: auto;
+                    left: 0; right: 0;
+                    top: 0; bottom: 0;
+                    width: calc(var(--size-icon) / 1.2);
+                    height: var(--size-icon);
+
+                    align-items: center;
+                    justify-content: center;
+                    color: white;
+                    transition: 300ms ease;
+                    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+                }
+                
+                &::before {
+                    background-color: darken($color-base, 20);
+                    clip-path: var(--player);
+                    left: 15%;
+                }
             }
         }
     }
@@ -165,31 +193,5 @@ main {
     overflow: auto;
     padding: 10px;
 
-    // Temporal:
-    // background-color: rgba(white, 0.1);
-
     flex-grow: 1;
-}
-
-.marca-agua {
-    position: absolute;
-    margin: auto;
-    left: 0; right: 0;
-    top: 0; bottom: 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    
-    z-index: -1;
-
-    svg {
-        height: 100%;
-        width: 100%;
-    }
-
-    path {
-        fill: rgba(white, 0.058);
-    }
 }

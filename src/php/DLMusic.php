@@ -74,6 +74,3 @@ class DLMusic {
         echo json_encode($files);
     }
 }
-
-$music = new DLMusic;
-$music->init();
