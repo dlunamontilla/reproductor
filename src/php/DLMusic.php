@@ -52,7 +52,7 @@ class DLMusic {
 
 $music = new DLMusic;
 
-header("content-type: application/json; charset=utf-8");
+// header("content-type: application/json; charset=utf-8");
 // print_r($music->init());
 echo json_encode($music->init());
 // $music->init();

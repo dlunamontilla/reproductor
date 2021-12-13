@@ -6,16 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reproductor de música</title>
 
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
     <link rel="stylesheet" href="build/css/style.css">
 </head>
 <body>
+    <div class="marca-agua" data-svg="src/images/icons/music.xml" aria-label="Marca de agua"></div>
+
     <main id="app">
         <header class="header">
             <nav class="navigation">
-                <div class="logo">
-                    <img class="logo__img" src="Logo" alt="Logotipo">
+                <a href="#" class="logo" id="logo">
+                    <div class="logo__icon" data-svg="src/images/icons/logo.xml" aria-label="Logotipo"></div>
                     <h1 class="logo__title">Escuchar música</h1>
-                </div>
+                </a>
     
                 <div class="search" id="search">
                     <input type="search" name="s" id="s" class="search__input" placeholder="Buscar música" />

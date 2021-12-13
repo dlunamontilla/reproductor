@@ -23,16 +23,24 @@ body {
 
 main {
     display: flex;
-    flex-wrap: wrap;
-    align-content: space-between;
-    min-height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+
     & > * {
         width: 100%;
     }
 }
 
 .header {
-    h1, h2, h3, h4, h5, h6 {
+    background-color: rgba(black, 0.2);
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
         margin: 0;
     }
 }
@@ -41,15 +49,47 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-height: 60px;
+    min-height: 80px;
     padding: 0 10px;
 }
 
 .logo {
+    --size: 50px;
+
     gap: 10px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: 300ms ease;
+
+    svg {
+        width: inherit;
+        height: inherit;
+    }
+
+    path {
+        fill: var(--color);
+    }
 
     &__title {
         font-size: 1.1rem;
+        color: rgba(white, 0.8);
+    }
+
+    &__icon {
+        width: var(--size);
+        height: var(--size);
+
+        --color: #{rgba(white, 0.7)};
+    }
+
+    &:hover {
+        opacity: 0.8;
+    }
+
+    &:active {
+        opacity: 1;
+        transition: none;
     }
 }
 
@@ -58,12 +98,12 @@ main {
 
     position: relative;
     padding: 0 10px;
-    
+
     background-color: rgba(black, 0.7);
     min-height: 100px;
 
     justify-content: space-between;
-    
+
     &::before {
         height: 4px;
         border-radius: 0 2px 2px 0;
@@ -81,7 +121,8 @@ main {
         z-index: 1;
     }
 
-    &, &__button {
+    &,
+    &__button {
         display: flex;
         align-items: center;
     }
@@ -91,7 +132,6 @@ main {
         gap: 10px;
 
         &__item {
-
             height: var(--size);
             min-width: calc(var(--size) * 1.2);
             border-radius: calc(var(--size) / 2);
@@ -120,7 +160,36 @@ main {
 }
 
 .container {
-    border: 1px solid rgba(white, 0.3);
-    min-height: 200px;
+    margin: 0 auto;
+    min-height: 300px;
+    overflow: auto;
+    padding: 10px;
+
+    // Temporal:
+    // background-color: rgba(white, 0.1);
+
+    flex-grow: 1;
 }
 
+.marca-agua {
+    position: absolute;
+    margin: auto;
+    left: 0; right: 0;
+    top: 0; bottom: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    
+    z-index: -1;
+
+    svg {
+        height: 100%;
+        width: 100%;
+    }
+
+    path {
+        fill: rgba(white, 0.058);
+    }
+}
