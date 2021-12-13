@@ -9,6 +9,26 @@ class DLMusic {
     private $base_dir;
     private $path;
 
+    private function processPATH( string $path ): string {
+        $pattern = "/\.\.\//";
+
+        preg_match_all($pattern, $path, $found);
+        $count = count($found[0]);
+        $path = preg_replace($pattern, "", $path);
+        $bars = preg_split("/\//", $path);
+        $offset = count($bars) - (1 + $count);
+
+        // Eliminar los últimos elementos del array en
+        // función de la ruta elegida por el usuario, siempre
+        // que sea posible:
+        array_splice($bars, $offset, $count);
+
+        // No continuar mientras no me devuelva un Array:
+        if ( !is_array($bars) ) return "";
+
+        return join("/", $bars);
+    }
+
     /**
      * @param string $base_dir Directorio base
      * a utilizar para listar archivos de música.
@@ -26,7 +46,7 @@ class DLMusic {
      * señalando la ruta relativa de los archivos de música.
      */
     public function init() {
-        $path = $this->base_dir . $this->path;
+        $path = $this->processPATH($this->base_dir) . $this->path;
 
         if (!is_dir($path)) {
             is_writable(dirname($this->path))
@@ -46,6 +66,7 @@ class DLMusic {
 
         closedir($dir);
 
+        header("content-type: application/json; charset=utf-8");
         return $files;
     }
 }
